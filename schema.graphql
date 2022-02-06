@@ -1,6 +1,25 @@
-type ExampleEntity @entity {
+type tokenTransfer @entity {
   id: ID!
-  count: BigInt!
-  owner: Bytes! # address
-  approved: Bytes! # address
+  tokenId: BigInt!
+  from: Bytes!
+  to: Bytes!
+  nftId: tokenDetails!
+}
+
+type tokenDetails @entity {
+  id: ID!
+  tokenId: BigInt!
+  type: String!
+  transfers: [tokenTransfer!]! @derievedFrom(field: "nftId")
+  transanctionHash: String!
+  owner: Bytes!
+  createdOn: BigInt!
+  creatorAddress: Bytes!
+  tokenURI: String!
+}
+
+type userBlacklist @entity {
+  id: ID!
+  userAddress: Bytes!
+  attempts: Int!
 }

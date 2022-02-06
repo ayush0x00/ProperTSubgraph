@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -10,23 +10,15 @@ dataSources:
       abi: NFT
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.2
+      apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - Approval
-        - ApprovalForAll
-        - Breach
-        - Transfer
-        - landMinted
-        - lordMinted
+        - nftTransfer
+        - NFT
       abis:
         - name: NFT
           file: ./abis/NFT.json
       eventHandlers:
-        - event: Approval(indexed address,indexed address,indexed uint256)
-          handler: handleApproval
-        - event: ApprovalForAll(indexed address,indexed address,bool)
-          handler: handleApprovalForAll
         - event: Breach(address)
           handler: handleBreach
         - event: Transfer(indexed address,indexed address,indexed uint256)
