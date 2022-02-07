@@ -3,7 +3,7 @@ type tokenTransfer @entity {
   tokenId: BigInt!
   from: Bytes!
   to: Bytes!
-  nftId: tokenDetails!
+  nftIdMap: tokenDetails!
 }
 
 type tokenDetails @entity {
@@ -15,7 +15,7 @@ type tokenDetails @entity {
   owner: Bytes!
   createdOn: BigInt!
   creatorAddress: Bytes!
-  tokenURI: String!
+  #tokenURI: String!
 }
 
 type userBlacklist @entity {

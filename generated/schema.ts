@@ -69,13 +69,13 @@ export class tokenTransfer extends Entity {
     this.set("to", Value.fromBytes(value));
   }
 
-  get nftId(): string {
-    let value = this.get("nftId");
+  get nftIdMap(): string {
+    let value = this.get("nftIdMap");
     return value.toString();
   }
 
-  set nftId(value: string) {
-    this.set("nftId", Value.fromString(value));
+  set nftIdMap(value: string) {
+    this.set("nftIdMap", Value.fromString(value));
   }
 }
 

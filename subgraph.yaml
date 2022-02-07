@@ -6,7 +6,7 @@ dataSources:
     name: NFT
     network: rinkeby
     source:
-      address: "0x47cd729Cea4E0B4Cb058BA48bbf0fD85b646a867"
+      address: "0xb0C4A31249571f38792FF4f6cBd3F5c95cF1A80F"
       abi: NFT
     mapping:
       kind: ethereum/events
@@ -19,7 +19,7 @@ dataSources:
         - name: NFT
           file: ./abis/NFT.json
       eventHandlers:
-        - event: Breach(address)
+        - event: Breach(address,uint256)
           handler: handleBreach
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer

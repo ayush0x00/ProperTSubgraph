@@ -75,8 +75,12 @@ export class Breach__Params {
     this._event = event;
   }
 
-  get param0(): Address {
+  get user(): Address {
     return this._event.parameters[0].value.toAddress();
+  }
+
+  get tokenId(): BigInt {
+    return this._event.parameters[1].value.toBigInt();
   }
 }
 
@@ -119,7 +123,7 @@ export class landMinted__Params {
     this._event = event;
   }
 
-  get param0(): BigInt {
+  get tokenId(): BigInt {
     return this._event.parameters[0].value.toBigInt();
   }
 }
@@ -137,7 +141,7 @@ export class lordMinted__Params {
     this._event = event;
   }
 
-  get param0(): BigInt {
+  get tokenId(): BigInt {
     return this._event.parameters[0].value.toBigInt();
   }
 }
